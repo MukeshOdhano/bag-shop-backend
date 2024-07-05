@@ -1,12 +1,10 @@
 const router = require("express").Router();
-const productModel = require("../model/product");
+const upload = require("../config/multer-config");
+
+const { allProduct, postProduct } = require("../controller/productControll");
 
 router
-	.get("/", (req, res) => {
-		res.send("Products");
-	})
-    .post("/", (req, res) => {
-        
-    });
+	.get("/", allProduct)
+	.post("/create", upload.single("image"), postProduct);
 
 module.exports = router;

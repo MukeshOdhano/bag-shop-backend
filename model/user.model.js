@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("");
 const userSchema = mongoose.Schema({
 	fullname: { type: String, minLength: 3, trim: true },
-	email: String,
-	password: String,
-	isadmin: Boolean,
+	email: { type: String, required: true },
+	password: { type: String, required: true },
+	// isadmin: Boolean,
 	contact: Number,
 	cart: {
 		type: Array,

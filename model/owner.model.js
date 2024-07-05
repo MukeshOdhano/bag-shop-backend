@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("");
 const ownerScehma = mongoose.Schema({
 	fullname: { type: String, minLength: 3, trim: true },
 	email: String,
